@@ -4,6 +4,9 @@ Template.main.helpers
   apps: ->
     Session.get 'apps'
 
+  statusIs: (goal) ->
+    @status is goal
+
 Template.main.onCreated ->
   @autorun =>
     Session.set 'apps', []
@@ -33,7 +36,20 @@ Template.main.onCreated ->
             Session.set 'apps', output.split("\n")
 
 Template.main.events
-  'click a': (evt) -> # launch app
+  'click a.mount': (evt) ->
+    evt.preventDefault()
+    chroot = @
+    if chroot = Session.get 'chroot'
+      connection.call 'start chroot', chroot, (err, out) ->
+        console.log 'Chroot launch returned', err ? out
+
+      Tracker.autorun (c) ->
+        obj = Chroots.findOne(chroot)
+        return unless obj.status is 'running'
+        c.stop()
+        Session.keyDeps.chroot.changed()
+
+  'click .app-list a': (evt) -> # launch app
     evt.preventDefault()
     app = @
 

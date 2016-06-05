@@ -1,12 +1,28 @@
+<head>
+  <title>Romaine</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet" />
+</head>
+
 <body>
+  {{> nav}}
   {{> main}}
 </body>
 
 <template name="main">
-  Chroots:
-  <ul>
-    {{#each chroot}}
-      <li>{{_id}}: {{status}}</li>
-    {{/each}}
-  </ul>
+  <div id="wrap">
+    {{#with chroot}}
+      <p>{{_id}} is {{status}}</p>
+
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Apps in {{_id}}</h4></li>
+        {{#each apps}}
+          <li class="collection-item"><div>{{this}}<a href="#!" class="secondary-content"><i class="material-icons">play_arrow</i></a></div></li>
+          {{/each}}
+      </ul>
+
+    {{else}}
+      <h3>Select a chroot to continue</h3>
+    {{/with}}
+  </div>
 </template>

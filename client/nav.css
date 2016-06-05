@@ -1,0 +1,29 @@
+nav {
+  background-color: #689f38; /* light-green darken-2 */
+}
+
+.side-nav .chroot-stopped a {
+  color: #999;
+  font-style: italic;
+}
+
+.side-nav li {
+  padding: 0;
+}
+nav i.material-icons {
+  height: auto;
+  margin-right: 5px;
+}
+.side-nav.fixed li a {
+  display: flex;
+  align-items: center;
+}
+
+nav .btn-floating {
+  position: absolute;
+  bottom: 90px;
+  right: 0;
+}
+nav .btn-floating i {
+  width: auto;
+}

@@ -1,7 +1,16 @@
 Template.nav.helpers
-  chroot: -> Chroots.find()
+  chroots: ->
+    Chroots.find()
+
+  chroot: ->
+    Chroots.findOne(Session.get 'chroot')
+
+  icon: -> switch @status
+    when 'stopped' then 'pause'
+    when 'launching' then 'sync'
+    when 'running' then 'play_arrow'
 
 Template.nav.events
-  'click a': (evt) ->
+  'click .side-nav a': (evt) ->
     evt.preventDefault()
     Session.set 'chroot', @_id

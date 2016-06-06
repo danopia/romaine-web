@@ -1,0 +1,9 @@
+.directories p {
+  padding: 0;
+}
+
+.apps li {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+}

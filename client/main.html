@@ -30,6 +30,8 @@
 
         {{#if statusIs 'running'}}
           <div class="col s12 m6">
+            {{> AppList}}
+
             {{#if apps.length}}
               <ul class="collection with-header app-list">
                 <li class="collection-header">

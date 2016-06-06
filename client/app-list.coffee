@@ -30,7 +30,6 @@ updateEntries = (chroot, root, Type, extension) ->
     Entries.remove {chroot, Type}, (err) ->
       list.split("\n").forEach (path) ->
         return unless path.endsWith extension
-        subpath = path.slice(root.length + 1)
 
         setTimeout ->
           runCmd 'cat', path, (err, raw) ->
@@ -47,7 +46,7 @@ updateEntries = (chroot, root, Type, extension) ->
                     val.split(';')
                   else val
 
-            obj._id = subpath
+            obj._id = path.slice(root.length + 1).replace(/\//g, '-')
             obj.chroot = chroot
             Entries.insert obj, (err) ->
         , Math.round(Math.random() * 5000)

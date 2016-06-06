@@ -31,34 +31,17 @@
         {{#if statusIs 'running'}}
           <div class="col s12 m6">
             {{> AppList}}
-
-            {{#if apps.length}}
-              <ul class="collection with-header app-list">
-                <li class="collection-header">
-                  <h4>Installed Apps</h4>
-                </li>
-
-                {{#each apps}}
-                  <li class="collection-item">
-                    <div>{{this}}
-                      <a href="#!" class="secondary-content"><i class="material-icons">play_arrow</i></a>
-                      <a href="#!" class="secondary-content"><i class="material-icons">pause</i></a>
-                    </div>
-                  </li>
-                {{/each}}
-
-                <li class="collection-item">
-                  <em>Browse all apps...</em>
-                </li>
-              </ul>
-            {{/if}}
+            {{> StorageCard}}
           </div>
 
           <div class="col s12 m6">
 
             <div class="card blue-grey darken-1 store-promo-card">
               <div class="card-content white-text">
-                <span class="card-title">Install more apps</span>
+                <span class="card-title">
+                  <i class="material-icons">get_app</i>
+                  Install more apps
+                </span>
                 <p>
                   Make your chroot do more for you.
                   Browse the app store and find useful, easy-to-install software.
@@ -72,7 +55,10 @@
 
             <div class="card blue-grey darken-1 backup-promo-card">
               <div class="card-content white-text">
-                <span class="card-title">Configure backups</span>
+                <span class="card-title">
+                  <i class="material-icons">settings_backup_restore</i>
+                  Configure backups
+                </span>
                 <p>
                   Chromebooks are easy to wipe, especially in dev-mode.
                   Don't let a powerwash or corrupted installation slow you down.
@@ -87,7 +73,10 @@
 
             <div class="card blue-grey darken-1 encryption-promo-card">
               <div class="card-content white-text">
-                <span class="card-title">Enable encryption</span>
+                <span class="card-title">
+                  <i class="material-icons">enhanced_encryption</i>
+                  Enable encryption
+                </span>
                 <p>
                   Keep your data and configuration secure.
                   Protect your chroot with a passworded key.

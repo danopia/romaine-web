@@ -91,6 +91,17 @@
 
           </div>
         {{/if}}
+
+        {{#if statusIs 'crashed'}}
+          <div class="broken">
+            <h1>Oops!</h1>
+            <h4>The Romaine daemon for this chroot crashed.</h4>
+            <a class="waves-effect waves-light btn-large mount">
+              <i class="material-icons left">play_circle_filled</i>
+              Remount {{_id}}
+            </a>
+          </div>
+        {{/if}}
       </div>
 
     {{else}}

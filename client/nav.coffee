@@ -6,7 +6,9 @@ Template.nav.helpers
     Chroots.findOne(Session.get 'chroot')
 
   icon: -> switch @status
-    when 'stopped' then 'pause'
+    when 'stopped' then switch
+      when @encrypted then 'lock'
+      else 'pause'
     when 'launching' then 'sync'
     when 'running' then 'play_arrow'
     when 'crashed' then 'error'

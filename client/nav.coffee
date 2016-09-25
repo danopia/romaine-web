@@ -9,6 +9,7 @@ Template.nav.helpers
     when 'stopped' then 'pause'
     when 'launching' then 'sync'
     when 'running' then 'play_arrow'
+    when 'crashed' then 'error'
 
 Template.nav.events
   'click .side-nav a': (evt) ->

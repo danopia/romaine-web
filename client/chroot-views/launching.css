@@ -1,0 +1,35 @@
+.launching {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.launching .progress {
+  height: 1em;
+  max-width: 40em;
+}
+
+.launching .chroot-name {
+  padding: 0.2em 0.3em 0.1em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.06);
+  border-radius: 0.2em;
+}
+
+.launching h3 {
+  font-weight: 300;
+}
+.launching h4 {
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-bottom: 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+.launching p {
+  margin-top: 0;
+  color: rgba(0, 0, 0, 0.4);
+}

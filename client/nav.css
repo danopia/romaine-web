@@ -1,5 +1,6 @@
 nav {
   background-color: #689f38; /* light-green darken-2 */
+  padding-left: 20px;
 }
 
 .side-nav .chroot-stopped a {

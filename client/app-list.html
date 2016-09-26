@@ -1,19 +1,17 @@
 <template name="AppList">
   <ul class="collapsible popout directories" data-collapsible="accordion">
     {{#each directories}}
-      {{#if hasApps}}
-        <li>
-          <div class="collapsible-header"><i class="material-icons">folder</i>{{Name}}</div>
-          <div class="collapsible-body">
-            <p>{{Comment}}</p>
-            <ul class="apps">
-              {{#each apps}}
-                <li>{{Name}} - {{GenericName}}</li>
-              {{/each}}
-            </ul>
-          </div>
-        </li>
-      {{/if}}
+      <li>
+        <div class="collapsible-header"><i class="material-icons">folder</i>{{Entry.Name}}</div>
+        <div class="collapsible-body">
+          <p>{{Entry.Comment}}</p>
+          <ul class="apps">
+            {{#each apps}}
+              <li>{{Entry.Name}} - {{Entry.GenericName}}<br>{{Entry.Comment}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </li>
     {{/each}}
   </ul>
 </template>

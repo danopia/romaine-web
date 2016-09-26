@@ -1,26 +1,17 @@
 #wrap {
-  margin: 15px 15px 15px 260px;
-}
-
-.nav-wrapper {
-  margin-left: 260px;
+  padding: 15px;
+  flex: 1;
+  overflow-y: scroll;
 }
 
 body {
   background: #e7e7e7;
-}
-
-.broken {
-  position: absolute;
-  left: 240px;
-  top: 60px;
-  right: 0;
-  bottom: 0;
-  background: url("/img/broken.jpg");
-  background-size: cover;
-
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 0 0 0 240px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
 }

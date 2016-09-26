@@ -4,24 +4,27 @@ Template.AppList.onRendered ->
 
 Template.AppList.helpers
   directories: ->
-    Chroot = Session.get 'chroot'
+    chroot = Template.currentData()
     FdApps.find({
-      Chroot
+      Chroot: chroot._id
       'Entry.Type': 'Directory'
-    }).map (ent) -> ent.Entry
-
-  hasApps: ->
-    Chroot = Session.get 'chroot'
-    FdApps.find({
-      Chroot
-      'Entry.Type': 'Application'
-      'Entry.Categories': @Name
-    }).count() > 0
+    }).fetch()
+    .filter (app) ->
+      FdApps.find({
+        Chroot: app.Chroot
+        'Entry.Type': 'Application'
+        'Entry.Categories': app.Entry.Name
+        'Entry.OnlyShowIn': null
+        'Entry.NoDisplay': $ne: true
+      }).count()
+    #.map (ent) -> ent.Entry
 
   apps: ->
-    Chroot = Session.get 'chroot'
+    {Chroot, Entry} = Template.currentData()
     FdApps.find({
       Chroot
       'Entry.Type': 'Application'
-      'Entry.Categories': @Name
-    }).map (ent) -> ent.Entry
+      'Entry.Categories': Entry.Name
+      'Entry.OnlyShowIn': null
+      'Entry.NoDisplay': $ne: true
+    })#.map (ent) -> ent.Entry

@@ -10,10 +10,6 @@ Template.nav.helpers
       when @encrypted then 'lock'
       else 'pause'
     when 'launching' then 'sync'
+    when 'detached' then 'help_outline'
     when 'running' then 'play_arrow'
     when 'crashed' then 'error'
-
-Template.nav.events
-  'click .side-nav a': (evt) ->
-    evt.preventDefault()
-    Session.set 'chroot', @_id

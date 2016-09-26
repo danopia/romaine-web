@@ -3,7 +3,7 @@
     <div class="nav-wrapper">
       {{#with chroot}}
         <a href="#!" class="brand-logo">{{_id}}</a>
-        
+
         <ul class="right hide-on-med-and-down">
           <li><a href="#search"><i class="material-icons left">search</i>Search</a></li>
           <li><a href="#settings"><i class="material-icons">settings</i></a></li>
@@ -14,7 +14,7 @@
     <ul id="slide-out" class="side-nav fixed">
       {{#each chroots}}
         <li class="chroot chroot-{{status}}">
-          <a href="#!">
+          <a href="/chroots/{{_id}}">
             <i class="material-icons">{{icon}}</i>
             {{_id}}
           </a>

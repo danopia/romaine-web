@@ -1,0 +1,19 @@
+<template name="ChrootViewCrashed">
+  <div class="row">
+    <div class="broken">
+      <h1>Oops!</h1>
+      <h4>The Romaine daemon for this chroot crashed.</h4>
+
+      <a class="waves-effect waves-light btn-large mount">
+        <i class="material-icons left">play_circle_filled</i>
+        Remount {{_id}}
+      </a>
+
+      <p>
+        If you think you know know why Romaine crashed, please
+        <a href="mailto:romaine-engineering@danopia.net">contact us</a>
+        so Romaine can be improved for everyone.
+      </p>
+    </div>
+  </div>
+</template>

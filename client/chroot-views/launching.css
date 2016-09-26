@@ -12,14 +12,6 @@
   max-width: 40em;
 }
 
-.launching .chroot-name {
-  padding: 0.2em 0.3em 0.1em;
-  margin: 0;
-  font-size: 85%;
-  background-color: rgba(0,0,0,0.06);
-  border-radius: 0.2em;
-}
-
 .launching h3 {
   font-weight: 300;
 }

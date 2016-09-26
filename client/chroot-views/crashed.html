@@ -1,12 +1,16 @@
 <template name="ChrootViewCrashed">
-  <div class="row">
-    <div class="broken">
+  <div class="broken">
+    <div class="glass">
       <h1>Oops!</h1>
-      <h4>The Romaine daemon for this chroot crashed.</h4>
+      <h4>
+        The Romaine daemon for
+        <code class="chroot-name">{{_id}}</code>
+        has crashed.
+      </h4>
 
-      <a class="waves-effect waves-light btn-large mount">
-        <i class="material-icons left">play_circle_filled</i>
-        Remount {{_id}}
+      <a class="waves-effect waves-light btn-large reset">
+        <i class="material-icons left">refresh</i>
+        Reset chroot status
       </a>
 
       <p>

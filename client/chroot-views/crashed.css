@@ -1,11 +1,17 @@
 .broken {
-  position: absolute;
-  left: 240px;
-  top: 60px;
-  right: 0;
-  bottom: 0;
+  flex: 1;
   background: url("/img/broken.jpg");
   background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.broken .glass {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.5em;
+  padding: 0 1em;
 
   display: flex;
   flex-direction: column;
